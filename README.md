@@ -1,3 +1,3 @@
 # node-tester
 
-test scripts
+test scripts to study javascript
