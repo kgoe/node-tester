@@ -1,6 +1,4 @@
 var assert = require('assert');
-//var supertest = require("supertest");
-//var should = require("should");
 
 describe('JavaScript Core', function() {
     describe('Value Properties', function() {
