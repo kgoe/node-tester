@@ -29,8 +29,27 @@ HTTP
 HTTP/2
 HTTPS
 Inspector
-Internationali
+Internationalization
 Modules
 Net
-
+OS
+Path
+Performance Hooks
+Process
+Punycode
+Query Strings
+Readline
+REPL
+Stream
+String Decoder
+Timers
+TLS/SSL
+Tracing
+TTY
+UDP/Datagram
+URL
+Utilities
+V8
+VM
+ZLIB
 */
