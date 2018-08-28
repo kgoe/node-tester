@@ -2,9 +2,14 @@ jsdom
 jsdoc
 node-plantuml
 jquery
+cheerio
 
 supertest
 should
-mocha
+chai
 
+-- GLOBAL
+mocha
 debug
+
+sass
