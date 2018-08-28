@@ -6,6 +6,50 @@ describe('Node.JS Core', function() {
 
 /*
 // DevDocs
+Assert
+Async Hooks
+Buffer
+Child Process
+Cluster
+Command Line Options
+Console
+Crypto
+DNS
+Domain
+ECMAScript Modules
+Errors
+Events
+File System
+Global Objects
+HTTP
+HTTP/2
+HTTPS
+Inspector
+Internationalization Support
+Miscellaneous
+Modules
+N-API
+Net
+OS
+Path
+Performance Timing API
+Process
+Punycode
+Query String
+Readline
+REPL
+Stream
+String Decoder
+Timers
+TLS/SSL
+TTY
+UDP/Datagram
+URL
+Util
+V8
+VM
+Zlib
+
 // Documentation
 Assertion Testing
 Async Hooks
