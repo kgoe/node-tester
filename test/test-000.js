@@ -219,3 +219,177 @@ describe('Array', function() {
   });
 });
 //*/
+
+/*
+describe('Array', function() {
+  describe.only('#indexOf()', function() {
+    it('should return -1 unless present', function() {
+      // this test will be run
+    });
+
+    it('should return the index when present', function() {
+      // this test will also be run
+    });
+  });
+
+  describe.only('#concat()', function () {
+    it('should return a new Array', function () {
+      // this test will also be run
+    });
+  });
+
+  describe('#slice()', function () {
+    it('should return a new Array', function () {
+      // this test will not be run
+    });
+  });
+});
+//*/
+
+/*
+describe('Array', function() {
+  describe.only('#indexOf()', function() {
+    it.only('should return -1 unless present', function() {
+      // this test will be run
+    });
+
+    it('should return the index when present', function() {
+      // this test will not be run
+    });
+  });
+});
+//*/
+
+/*
+describe('Array', function() {
+  describe.skip('#indexOf()', function() {
+    // ...
+  });
+});
+//*/
+
+/*
+describe('Array', function() {
+  describe('#indexOf()', function() {
+    it.skip('should return -1 unless present', function() {
+      // this test will not be run
+    });
+
+    it('should return the index when present', function() {
+      // this test will be run
+    });
+  });
+});
+//*/
+
+/* Check Environment
+it('should only test in the correct environment', function() {
+  if ( true ) { // check environment here
+    // make assertions
+} else {
+    this.skip();
+  }
+});
+//*/
+
+/*
+it('should only test in the correct environment', function() {
+    if ( true ) { // check test environment
+      // make assertions
+    } else {
+      // do nothing
+    }
+});
+//*/
+
+/*
+before(function() {
+  if ( true ) { // check test environment
+    // setup code
+} else {
+    this.skip();
+  }
+});
+//*/
+
+/* RETRIES
+describe('retries', function() {
+  // Retry all tests in this suite up to 4 times
+  this.retries(4);
+
+  beforeEach(function () {
+    browser.get('http://www.yahoo.com');
+  });
+
+  it('should succeed on the 3rd try', function () {
+    // Specify this test to only retry up to 2 times
+    this.retries(2);
+    expect($('.foo').isDisplayed()).to.eventually.be.true;
+  });
+});
+//*/
+
+/* DYNAMICALLY GENERATED TESTS
+var assert = require('chai').assert;
+
+function add() {
+  return Array.prototype.slice.call(arguments).reduce(function(prev, curr) {
+    return prev + curr;
+  }, 0);
+}
+
+describe('add()', function() {
+  var tests = [
+    {args: [1, 2],       expected: 3},
+    {args: [1, 2, 3],    expected: 6},
+    {args: [1, 2, 3, 4], expected: 10}
+  ];
+
+  tests.forEach(function(test) {
+    it('correctly adds ' + test.args.length + ' args', function() {
+      var res = add.apply(null, test.args);
+      assert.equal(res, test.expected);
+    });
+  });
+});
+//*/
+
+/* Update Slow
+describe('something slow', function() {
+  this.slow(10000);
+
+  it('should take long enough for me to go make a sandwich', function() {
+    // ...
+  });
+});
+//*/
+
+/* Timeout Suite Level
+describe('a suite of tests', function() {
+  this.timeout(500);
+
+  it('should take less than 500ms', function(done){
+    setTimeout(done, 300);
+  });
+
+  it('should take less than 500ms as well', function(done){
+    setTimeout(done, 250);
+  });
+})
+//*/
+
+/* Timeout Test Level
+it('should take less than 500ms', function(done){
+  this.timeout(500);
+  setTimeout(done, 300);
+});
+//*/
+
+/* Timeout Hook Level
+describe('a suite of tests', function() {
+  beforeEach(function(done) {
+    this.timeout(3000); // A very long environment setup.
+    setTimeout(done, 2500);
+  });
+});
+//*/
