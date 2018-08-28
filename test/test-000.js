@@ -393,3 +393,140 @@ describe('a suite of tests', function() {
   });
 });
 //*/
+
+/* Sample API
+describe('api', function() {
+  describe('GET /api/users', function() {
+    it('respond with an array of users', function() {
+      // ...
+    });
+  });
+});
+
+describe('app', function() {
+  describe('GET /users', function() {
+    it('respond with an array of users', function() {
+      // ...
+    });
+  });
+});
+//*/
+
+// Interface System
+// BDD
+// TDD
+// Exports
+// QUnit
+// Require
+
+/* BDD
+ describe('Array', function() {
+    before(function() {
+      // ...
+    });
+
+    describe('#indexOf()', function() {
+      context('when not present', function() {
+        it('should not throw an error', function() {
+          (function() {
+            [1,2,3].indexOf(4);
+          }).should.not.throw();
+        });
+        it('should return -1', function() {
+          [1,2,3].indexOf(4).should.equal(-1);
+        });
+      });
+      context('when present', function() {
+        it('should return the index where the element first appears in the array', function() {
+          [1,2,3].indexOf(3).should.equal(2);
+        });
+      });
+    });
+  });
+//*/
+
+/* TDD
+suite('Array', function() {
+  setup(function() {
+    // ...
+  });
+
+  suite('#indexOf()', function() {
+    test('should return -1 when not present', function() {
+      assert.equal(-1, [1,2,3].indexOf(4));
+    });
+  });
+});
+//*/
+
+/* EXPORTS
+module.exports = {
+  before: function() {
+    // ...
+  },
+
+  'Array': {
+    '#indexOf()': {
+      'should return -1 when not present': function() {
+        [1,2,3].indexOf(4).should.equal(-1);
+      }
+    }
+  }
+};
+//*/
+
+/* QUNIT
+function ok(expr, msg) {
+  if (!expr) throw new Error(msg);
+}
+
+suite('Array');
+
+test('#length', function() {
+  var arr = [1,2,3];
+  ok(arr.length == 3);
+});
+
+test('#indexOf()', function() {
+  var arr = [1,2,3];
+  ok(arr.indexOf(1) == 0);
+  ok(arr.indexOf(2) == 1);
+  ok(arr.indexOf(3) == 2);
+});
+
+suite('String');
+
+test('#length', function() {
+  ok('foo'.length == 3);
+});
+//*/
+
+/* REQUIRE
+var testCase = require('mocha').describe;
+var pre = require('mocha').before;
+var assertions = require('mocha').it;
+var assert = require('chai').assert;
+
+testCase('Array', function() {
+  pre(function() {
+    // ...
+  });
+
+  testCase('#indexOf()', function() {
+    assertions('should return -1 when not present', function() {
+      assert.equal([1,2,3].indexOf(4), -1);
+    });
+  });
+});
+//*/
+
+/* Example
+describe('Array', function() {
+  describe('#indexOf()', function() {
+    it('should return -1 when the value is not present', function() {
+      [1,2,3].indexOf(5).should.equal(-1);
+      [1,2,3].indexOf(0).should.equal(-1);
+    });
+  });
+});
+//*/
