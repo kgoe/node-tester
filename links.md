@@ -24,4 +24,6 @@ https://nodejs.org/en/docs/guides/debugging-getting-started/
 
 https://www.npmjs.com/package/why-is-node-running
 
-https://github.com/nodejs/node/blob/master/doc/api/async_hooks.md
+https://github.com/nodejs/node/blob/master/doc/api/async_hooks.
+
+https://gist.github.com/boneskull/7fe75b63d613fa940db7ec990a5f5843
