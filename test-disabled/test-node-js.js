@@ -32,42 +32,48 @@ var zlib = require('zlib');
 //console.log(Object.getOwnPropertyNames(global));
 
 describe('Node.JS Core Global', function() {
-    it('escape', function() {
-        assert.equal(typeof escape, 'function');
-    });
-    it('Object', function() {
-        assert.equal(typeof Object, 'function');
-    });
-    it('Proxy', function() {
-        assert.equal(typeof Proxy, 'function');
-    });
-    it('SyntaxError', function() {
-        assert.equal(typeof SyntaxError, 'function');
-    });
-    it('global', function() {
-        assert.equal(typeof global, 'object');
-    });
-    it('GLOBAL', function() {
-        assert.equal(typeof GLOBAL, 'object');
-    });
-    it('root', function() {
-        assert.equal(typeof root, 'object');
-    });
-    it('Math', function() {
-        assert.equal(typeof Math, 'object');
-    });
-    it('Intl', function() {
-        assert.equal(typeof Intl, 'object');
-    });
-    it('JSON', function() {
-        assert.equal(typeof JSON, 'object');
-    });
-    it('console', function() {
-        assert.equal(typeof console, 'object');
-    });
-    it('process', function() {
-        assert.equal(typeof process, 'object');
-    });
+  it('escape', function() {
+    assert.equal(typeof escape, 'function');
+  });
+  it('Object', function() {
+    assert.equal(typeof Object, 'function');
+  });
+  it('Proxy', function() {
+    assert.equal(typeof Proxy, 'function');
+  });
+  it('SyntaxError', function() {
+    assert.equal(typeof SyntaxError, 'function');
+  });
+  it('global', function() {
+    assert.equal(typeof global, 'object');
+  });
+  it('GLOBAL', function() {
+    assert.equal(typeof GLOBAL, 'object');
+  });
+  it('root', function() {
+    assert.equal(typeof root, 'object');
+  });
+  it('Math', function() {
+    assert.equal(typeof Math, 'object');
+  });
+  it('Intl', function() {
+    assert.equal(typeof Intl, 'object');
+  });
+  it('JSON', function() {
+    assert.equal(typeof JSON, 'object');
+  });
+  it('console', function() {
+    assert.equal(typeof console, 'object');
+  });
+  it('process', function() {
+    assert.equal(typeof process, 'object');
+  });
+  it('require', function() {
+    assert.equal(typeof require, 'function');
+  });
+  it('module', function() {
+    assert.equal(typeof module, 'object');
+  });
 });
 
 /*
@@ -163,19 +169,19 @@ describe('Node.JS Core Global', function() {
 
 describe('Node.JS Core Modules', function() {
   it('assert', function() {
-      assert.equal(typeof assert, 'function');
+    assert.equal(typeof assert, 'function');
   });
   it.skip('async_hooks', function() {
-      assert.equal(typeof async_hooks, 'object');
+    assert.equal(typeof async_hooks, 'object');
   });
   it('buffer', function() {
-      assert.equal(typeof buffer, 'object');
+    assert.equal(typeof buffer, 'object');
   });
   it('child_process', function() {
-      assert.equal(typeof child_process, 'object');
+    assert.equal(typeof child_process, 'object');
   });
   it('cluster', function() {
-      assert.equal(typeof cluster, 'object');
+    assert.equal(typeof cluster, 'object');
   });
   it('crypto', function() {
     assert.equal(typeof crypto, 'object');

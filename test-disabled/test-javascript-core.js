@@ -285,6 +285,7 @@ describe('JavaScript Core', function() {
 });
 
 describe('JavaScript Core Statements', function() {
+    describe('Control Flow',function(){});
     describe('Declarations', function() {
         it('var',function(done){
             try {
@@ -314,4 +315,7 @@ describe('JavaScript Core Statements', function() {
             }
         });
     });
+    describe('Functions and Classes',function(){});
+    describe('Iterations',function(){});
+    describe('Others',function(){});
 });
