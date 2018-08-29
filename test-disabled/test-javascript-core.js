@@ -285,37 +285,224 @@ describe('JavaScript Core', function() {
 });
 
 describe('JavaScript Core Statements', function() {
-    describe('Control Flow',function(){});
-    describe('Declarations', function() {
-        it('var',function(done){
-            try {
-                var test = 'test';
-                if ( test === 'test' ) {
-                    done();
-                }
-            } catch ( err ) {
-            }
-        });
-        it('let',function(done){
-            try {
-                let test = 'test';
-                if ( test === 'test' ) {
-                    done();
-                }
-            } catch ( err ) {
-            }
-        });
-        it('const',function(done){
-            try {
-                const test = 'test';
-                if ( test === 'test' ) {
-                    done();
-                }
-            } catch ( err ) {
-            }
-        });
+  describe('Control Flow',function(){
+    it('block',function(done){
+      try {
+        if ( true ) {
+          debugger;
+        }
+        var test = 'test';
+        if ( test === 'test' ) {
+          Labeled: {
+            done();
+          }
+        }
+      } catch ( err ) {
+      }
     });
-    describe('Functions and Classes',function(){});
-    describe('Iterations',function(){});
-    describe('Others',function(){});
+    it('break',function(done){
+      try {
+        var test = 'test';
+        for ( var i = 0; i<10; i++ ) {
+          break;
+        }
+        if ( test === 'test' ) {
+          done();
+        }
+      } catch ( err ) {
+      }
+    });
+    it('continue',function(done){
+      try {
+        var test = 'test';
+        for ( var i = 0; i<10; i++ ) {
+          continue;
+        }
+        if ( test === 'test' ) {
+          done();
+        }
+      } catch ( err ) {
+      }
+    });
+
+    it('empty',function(done){
+      try {
+        var test = 'test';
+        var array1 = [1, 2, 3];
+        // Assign all array values to 0
+        for (i = 0; i < array1.length; array1[i++] = 0) /* empty statement */ ;
+        
+        if ( test === 'test' ) {
+          done();
+        }
+      } catch ( err ) {
+      }
+    });
+
+    it('if ... else',function(done){
+      try {
+        var test = 'test';
+        var a = -5;
+        if (a > 0) {
+          a = "positive";
+        } else {
+          a = "NOT positive";
+        }
+        if ( test === 'test' ) {
+          done();
+        }
+      } catch ( err ) {
+      }
+    });
+
+    it('switch',function(done){
+      try {
+        var test = 'test';
+        var expr = 'Papayas';
+        switch (expr) {
+          case 'Oranges':
+            //console.log('Oranges are $0.59 a pound.');
+            break;
+          case 'Mangoes':
+          case 'Papayas':
+            //console.log('Mangoes and papayas are $2.79 a pound.');
+            // expected output: "Mangoes and papayas are $2.79 a pound."
+            break;
+          default:
+            //console.log('Sorry, we are out of ' + expr + '.');
+        }
+        if ( test === 'test' ) {
+          done();
+        }
+      } catch ( err ) {
+      }
+    });
+
+    it('throw',function(done){
+      try {
+        var test = 'test';
+        throw "Parameter is not a number!";
+      } catch ( err ) {
+        done();
+      }
+    });
+
+    it('try ... catch ... finally',function(done){
+      try {
+        var test = 'test';
+        throw "Parameter is not a number!";
+      } catch ( err ) {
+        test = 'test 2';
+      } finally {
+        done();
+      }
+    });
+
+  });
+  describe('Declarations', function() {
+      it('var',function(done){
+          try {
+              var test = 'test';
+              if ( test === 'test' ) {
+                  done();
+              }
+          } catch ( err ) {
+          }
+      });
+      it('let',function(done){
+          try {
+              let test = 'test';
+              if ( test === 'test' ) {
+                  done();
+              }
+          } catch ( err ) {
+          }
+      });
+      it('const',function(done){
+          try {
+              const test = 'test';
+              if ( test === 'test' ) {
+                  done();
+              }
+          } catch ( err ) {
+          }
+      });
+  });
+  describe('Functions and Classes',function(){});
+  describe('Iterations',function(){});
+  describe('Others',function(){
+    it('debugger',function(done){
+      try {
+        debugger;
+        var test = 'test';
+        if ( test === 'test' ) {
+          done();
+        }
+      } catch ( err ) {
+      }
+    });
+
+    /*
+    it.skip('export', function() {
+      try {
+        export { true };
+        //var test = 'test';
+        if ( test == 'test' ) {
+          done();
+        }
+      } catch ( err ) {
+      }
+    });
+    //*/
+
+    /*
+    it.skip('import', function() {
+      try {
+        import * as name from "assert";;
+        var test = 'test';
+        if ( test === 'test' ) {
+          done();
+        }
+      } catch ( err ) {
+      }
+    });
+    //*/
+
+    /*
+    it('import.meta',function(done){
+      try {
+        import.meta;
+        var test = 'test';
+        if ( test === 'test' ) {
+          done();
+        }
+      } catch ( err ) {
+      }
+    });
+    //*/
+
+    it('label',function(done){
+      try {
+        labeler:
+        var test = 'test';
+        if ( test === 'test' ) {
+          done();
+        }
+      } catch ( err ) {
+      }
+    });
+
+    it('with',function(done){
+      try {
+        labeler:
+        var test = 'test';
+
+        // Not Recommended
+        with ( test === 'test' ) {
+          done();
+        }
+      } catch ( err ) {
+      }
+    });
+  });
 });
