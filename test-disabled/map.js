@@ -200,6 +200,23 @@ var mochaArray =
   'xit'
 ];
 
+var mochaProperties = 
+[
+  'before',     // function
+  'after',      // function
+  'beforeEach', // function
+  'afterEach',  // function
+  'run',        // undefined
+  'context',    // function
+  'describe',   // function
+  'xcontext',   // function
+  'xdescribe',  // function
+  'specify',    // function
+  'it',         // function
+  'xspecify',   // function
+  'xit'         // function
+];
+
 var chromeArray =
 [
   "Object",    
@@ -2392,3 +2409,8 @@ nodeArray.map(function(item){
   console.log(item,typeof global[item]);
 });
 //*/
+
+var mochaProperties = 
+mochaProperties.map(function(item){
+  console.log(item,typeof global[item]);
+});
