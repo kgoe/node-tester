@@ -1,4 +1,3 @@
-;doc={};
-;const print=console.log;
+;doc={};const print=console.log;
 
-print('000-main.js' + ' gg-kgoe-node-tester');
+print('main.js' + ' gg-kgoe-node-tester');
