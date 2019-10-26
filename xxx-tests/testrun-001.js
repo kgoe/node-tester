@@ -107,7 +107,7 @@ if ( typeof describe == 'function') {
       
       assert.equal(typeof ArrayBuffer, 'function');
       assert.equal(typeof SharedArrayBuffer, 'function');
-      assert.equal(typeof Atomics, 'function');
+      assert.equal(typeof Atomics, 'object');
       assert.equal(typeof DataView, 'function');
       assert.equal(typeof JSON, 'object');
       
