@@ -54,7 +54,7 @@ if ( typeof describe == 'function') {
       assert.equal(typeof Infinity, 'number');
       assert.equal(typeof NaN, 'number');
       assert.equal(typeof null, 'object');
-      assert.equal(typeof globalThis, 'object'); // new property
+      // assert.equal(typeof globalThis, 'object'); // Non Standard, New Property
     });
     
 
@@ -76,7 +76,7 @@ if ( typeof describe == 'function') {
       assert.equal(typeof WeakSet, 'function');
       
       assert.equal(typeof EvalError, 'function');
-      assert.equal(typeof InternalError, 'function'); // Internal
+      // assert.equal(typeof InternalError, 'function'); // Non Standard, Internal
       assert.equal(typeof RangeError, 'function');
       assert.equal(typeof ReferenceError, 'function');
       assert.equal(typeof SyntaxError, 'function');
@@ -171,7 +171,7 @@ if ( typeof describe == 'function') {
   
   it('js core functions', function() {
     assert.equal(typeof eval, 'function');
-    assert.equal(typeof uneval, 'function');
+    // assert.equal(typeof uneval, 'function'); // non standard
     assert.equal(typeof isFinite, 'function');
     assert.equal(typeof isNaN, 'function');
     assert.equal(typeof parseFloat, 'function');
