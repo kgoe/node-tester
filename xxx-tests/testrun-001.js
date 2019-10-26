@@ -112,10 +112,10 @@ if ( typeof describe == 'function') {
       assert.equal(typeof JSON, 'object');
       
       assert.equal(typeof Promise, 'function');
-      assert.equal(typeof Generator, 'function');
-      assert.equal(typeof GeneratorFunction, 'function');
-      assert.equal(typeof AsyncFunction, 'function');
-      assert.equal(typeof XMLHttpRequest, 'function');
+      assert.equal(typeof Generator, 'undefined'); // Non Standard
+      assert.equal(typeof GeneratorFunction, 'undefined'); // Non Standard
+      assert.equal(typeof AsyncFunction, 'undefined'); // Non Standard
+      assert.equal(typeof XMLHttpRequest, 'undefined'); // DOM Standard
 
       assert.equal(typeof Reflect, 'object');
       assert.equal(typeof Proxy, 'object');
