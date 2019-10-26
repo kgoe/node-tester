@@ -9,8 +9,11 @@ if ( typeof describe == 'function') {
       });
     });
   });
-
-  describe('js core properties', function() {
+  
+  
+  describe('js core constructor properties', function() {
+    
+    
     it('js environment', function() {
       assert.equal(typeof arguments,'object');
       assert.equal(typeof this, 'object');
@@ -34,6 +37,7 @@ if ( typeof describe == 'function') {
         assert.equal(true, false);
       }
     });
+    
 
     it('js core literals', function() {
       assert.equal(typeof function() {}, 'function');
@@ -50,7 +54,9 @@ if ( typeof describe == 'function') {
       assert.equal(typeof Infinity, 'number');
       assert.equal(typeof NaN, 'number');
       assert.equal(typeof null, 'object');
+      assert.equal(typeof globalThis, 'object'); // new property
     });
+    
 
     it('js core constructors', function() {
       assert.equal(typeof Object, 'function');
@@ -68,6 +74,48 @@ if ( typeof describe == 'function') {
       assert.equal(typeof Set, 'function');
       assert.equal(typeof WeakMap, 'function');
       assert.equal(typeof WeakSet, 'function');
+      
+      assert.equal(typeof EvalError, 'function');
+      assert.equal(typeof InternalError, 'function'); // Internal
+      assert.equal(typeof RangeError, 'function');
+      assert.equal(typeof ReferenceError, 'function');
+      assert.equal(typeof SyntaxError, 'function');
+      assert.equal(typeof TypeError, 'function');
+      assert.equal(typeof URIError, 'function');
+      
+      assert.equal(typeof BigInt, 'function');
+      assert.equal(typeof Math, 'object');
+      assert.equal(typeof Date, 'function');
+
+      assert.equal(typeof Array, 'function');
+      assert.equal(typeof Int8Array, 'function');
+      assert.equal(typeof Uint8Array, 'function');
+      assert.equal(typeof Uint8ClampedArray, 'function');
+      assert.equal(typeof Int16Array, 'function');
+      assert.equal(typeof Uint16Array, 'function');
+      assert.equal(typeof Int32Array, 'function');
+      assert.equal(typeof Uint32Array, 'function');
+      assert.equal(typeof Float32Array, 'function');
+      assert.equal(typeof Float64Array, 'function');
+      assert.equal(typeof BigInt64Array, 'function');
+      assert.equal(typeof BigUint64Array, 'function');
+      
+      assert.equal(typeof Map, 'function');
+      assert.equal(typeof Set, 'function');
+      assert.equal(typeof WeakMap, 'function');
+      assert.equal(typeof WeakSet, 'function');
+      
+      assert.equal(typeof ArrayBuffer, 'function');
+      assert.equal(typeof SharedArrayBuffer, 'function');
+      assert.equal(typeof Atomics, 'function');
+      assert.equal(typeof DataView, 'function');
+      assert.equal(typeof JSON, 'object');
+
+      assert.equal(typeof Reflect, 'object');
+      assert.equal(typeof Proxy, 'object');
+      
+      assert.equal(typeof Intl, 'object');
+      assert.equal(typeof WebAssembly, 'object');
       
       assert.equal(this.constructor.toString(), 'function Context() {}');
       assert.equal(Object.constructor.toString(), 'function Function() { [native code] }');
@@ -112,6 +160,22 @@ if ( typeof describe == 'function') {
       assert.equal(JSON.__proto__.toString(), '[object Object]');
       assert.equal(Math.__proto__.toString(), '[object Object]');
     });
+  });
+  
+  
+  it('js core functions', function() {
+    assert.equal(typeof eval, 'function');
+    assert.equal(typeof uneval, 'function');
+    assert.equal(typeof isFinite, 'function');
+    assert.equal(typeof isNaN, 'function');
+    assert.equal(typeof parseFloat, 'function');
+    assert.equal(typeof parseInt, 'function');
+    assert.equal(typeof decodeURI, 'function');
+    assert.equal(typeof decodeURIComponent, 'function');
+    assert.equal(typeof encodeURI, 'function');
+    assert.equal(typeof encodeURIComponent, 'function');
+    assert.equal(typeof escape, 'function');
+    assert.equal(typeof unescape, 'function');
   });
 
   // before
