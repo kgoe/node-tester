@@ -118,7 +118,7 @@ if ( typeof describe == 'function') {
       assert.equal(typeof XMLHttpRequest, 'undefined'); // DOM Standard
 
       assert.equal(typeof Reflect, 'object');
-      assert.equal(typeof Proxy, 'object');
+      assert.equal(typeof Proxy, 'function');
       
       assert.equal(typeof Intl, 'object');
       assert.equal(typeof WebAssembly, 'object');
