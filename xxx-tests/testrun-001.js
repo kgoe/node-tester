@@ -11,22 +11,18 @@ if ( typeof describe == 'function') {
   });
   
   
-  describe('js core constructor properties', function() {
-    
-    
-    it('js environment', function() {
+  describe('js core properties', function() {
+    it('js core environment', function() {
       assert.equal(typeof arguments,'object');
       assert.equal(typeof this, 'object');
-      assert.equal(typeof Object, 'function');
-      assert.equal(typeof Function, 'function');
-      assert.equal(typeof Number, 'function');
-      assert.equal(typeof String, 'function');
-      assert.equal(typeof Symbol, 'function');
-      assert.equal(typeof Boolean, 'function');
-      assert.equal(typeof Array, 'function');
-      assert.equal(typeof Date, 'function');
-      assert.equal(typeof Math, 'object');
+      
+      assert.equal(typeof Atomics, 'object');
       assert.equal(typeof JSON, 'object');
+      assert.equal(typeof Math, 'object');
+      assert.equal(typeof Reflect, 'object');
+      assert.equal(typeof Intl, 'object');
+      assert.equal(typeof WebAssembly, 'object');
+      
       if ( typeof global !== 'undefined') {
         // node js
         assert.equal(typeof global, 'object');
@@ -38,7 +34,7 @@ if ( typeof describe == 'function') {
       }
     });
     
-
+    
     it('js core literals', function() {
       assert.equal(typeof function() {}, 'function');
       assert.equal(typeof {}, 'object');
@@ -57,24 +53,20 @@ if ( typeof describe == 'function') {
       // assert.equal(typeof globalThis, 'object'); // Non Standard, New Property
     });
     
-
+    
     it('js core constructors', function() {
       assert.equal(typeof Object, 'function');
       assert.equal(typeof Function, 'function');
-      assert.equal(typeof Array, 'function');
       assert.equal(typeof Number, 'function');
-      assert.equal(typeof Boolean, 'function');
       assert.equal(typeof String, 'function');
-      assert.equal(typeof RegExp, 'function');
       assert.equal(typeof Symbol, 'function');
-      assert.equal(typeof Error, 'function');
-      assert.equal(typeof JSON, 'object');
-      assert.equal(typeof Math, 'object');
-      assert.equal(typeof Map, 'function');
-      assert.equal(typeof Set, 'function');
-      assert.equal(typeof WeakMap, 'function');
-      assert.equal(typeof WeakSet, 'function');
+      assert.equal(typeof Boolean, 'function');
+      assert.equal(typeof Date, 'function');
+      assert.equal(typeof Array, 'function');
+
+      assert.equal(typeof RegExp, 'function');
       
+      assert.equal(typeof Error, 'function');
       assert.equal(typeof EvalError, 'function');
       // assert.equal(typeof InternalError, 'function'); // Non Standard, Internal
       assert.equal(typeof RangeError, 'function');
@@ -82,11 +74,8 @@ if ( typeof describe == 'function') {
       assert.equal(typeof SyntaxError, 'function');
       assert.equal(typeof TypeError, 'function');
       assert.equal(typeof URIError, 'function');
-      
       assert.equal(typeof BigInt, 'function');
-      assert.equal(typeof Math, 'object');
-      assert.equal(typeof Date, 'function');
-
+      
       assert.equal(typeof Array, 'function');
       assert.equal(typeof Int8Array, 'function');
       assert.equal(typeof Uint8Array, 'function');
@@ -107,21 +96,21 @@ if ( typeof describe == 'function') {
       
       assert.equal(typeof ArrayBuffer, 'function');
       assert.equal(typeof SharedArrayBuffer, 'function');
-      assert.equal(typeof Atomics, 'object');
       assert.equal(typeof DataView, 'function');
-      assert.equal(typeof JSON, 'object');
       
       assert.equal(typeof Promise, 'function');
       assert.equal(typeof Generator, 'undefined'); // Non Standard
       assert.equal(typeof GeneratorFunction, 'undefined'); // Non Standard
       assert.equal(typeof AsyncFunction, 'undefined'); // Non Standard
       assert.equal(typeof XMLHttpRequest, 'undefined'); // DOM Standard
-
-      assert.equal(typeof Reflect, 'object');
       assert.equal(typeof Proxy, 'function');
-      
-      assert.equal(typeof Intl, 'object');
-      assert.equal(typeof WebAssembly, 'object');
+    });
+    
+
+    it('js core constructor prototype', function() {
+      assert.equal(function() {}.constructor.toString(), 'function Function() { [native code] }');
+      assert.equal(function() {}.prototype.toString(), '[object Object]');
+      assert.equal(function() {}.__proto__.toString(), 'function () { [native code] }');
       
       assert.equal(this.constructor.toString(), 'function Context() {}');
       assert.equal(Object.constructor.toString(), 'function Function() { [native code] }');
@@ -133,16 +122,14 @@ if ( typeof describe == 'function') {
       assert.equal(RegExp.constructor.toString(), 'function Function() { [native code] }');
       assert.equal(Symbol.constructor.toString(), 'function Function() { [native code] }');
       assert.equal(Error.constructor.toString(), 'function Function() { [native code] }');
-      assert.equal(JSON.constructor.toString(), 'function Object() { [native code] }');
-      assert.equal(Math.constructor.toString(), 'function Object() { [native code] }');
+      
       assert.equal(Map.constructor.toString(), 'function Function() { [native code] }');
       assert.equal(Set.constructor.toString(), 'function Function() { [native code] }');
       assert.equal(WeakMap.constructor.toString(), 'function Function() { [native code] }');
       assert.equal(WeakSet.constructor.toString(), 'function Function() { [native code] }');
-
-      assert.equal(function() {}.constructor.toString(), 'function Function() { [native code] }');
-      assert.equal(function() {}.prototype.toString(), '[object Object]');
-      assert.equal(function() {}.__proto__.toString(), 'function () { [native code] }');
+      
+      assert.equal(JSON.constructor.toString(), 'function Object() { [native code] }');
+      assert.equal(Math.constructor.toString(), 'function Object() { [native code] }');
 
       assert.equal(Object.prototype.toString(), '[object Object]');
       assert.equal(Function.prototype.toString(), 'function () { [native code] }');
@@ -163,6 +150,7 @@ if ( typeof describe == 'function') {
       assert.equal(RegExp.__proto__.toString(), 'function () { [native code] }');
       assert.equal(Symbol.__proto__.toString(), 'function () { [native code] }');
       assert.equal(Error.__proto__.toString(), 'function () { [native code] }');
+      
       assert.equal(JSON.__proto__.toString(), '[object Object]');
       assert.equal(Math.__proto__.toString(), '[object Object]');
     });
